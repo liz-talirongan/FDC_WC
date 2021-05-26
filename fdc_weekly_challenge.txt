@@ -1,0 +1,80 @@
+# FDC_WC
+
+Pig Latin (25 Points) - ( PHP )
+
+Create a program that converts an array of strings to "pig latin". 
+Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
+
+For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added, as in the following examples:
+
+"pig" = "igpay"
+"latin" = "atinlay"
+"banana" = "ananabay"
+
+For words that begin with vowel sounds, one just adds "way" or "yay" to the end (or just "ay"). Examples are:
+
+"are" = "areway" or "areay"
+"egg" = "eggway" or "eggay"
+
+
+-------------------------- code below
+
+-------------------------------
+
+Fibonacci Series (25 Points) - ( Javascript )
+
+Create a program that will return the  first n numbers of the Fibonacci sequence.
+
+The Fibonacci sequence is a set of numbers that starts with a one or a zero, followed by a one, and proceeds based on the rule that each number (called a Fibonacci number) is equal to the sum of the preceding two numbers. 
+
+-------------------------- code below
+
+<script>
+//Fibonacci series 
+let n = 8; // editable n 
+
+// get the equivalent number in fibonacci sequence
+function fibonacciConvert(n,memo = {}){
+	if (n < 2) {
+	   return n;
+	}
+
+	if (!memo[n]) {
+	   memo[n] = fibonacciConvert(n - 1, memo) + fibonacciConvert(n - 2, memo);
+	}
+
+	return memo[n];
+}
+
+
+
+function getFibonacciSequence(n){
+
+  //init fibonacci var
+  var fibonacciResult = [];
+
+   if (typeof n === "number") {
+	if (n == 0 || n == 1) {
+	   fib = fibonacciConvert(n);
+	   fibonacciResult.push(fib);
+	}else{
+	   //set loop 
+	   for (var i = 0; i < n; i++) {
+		var fib = fibonacciConvert(i);
+		fibonacciResult.push(fib);
+	   }
+	}
+
+      return fibonacciResult.join(", ");	
+   }else{
+	return "Invalid Input, input must be numeric";
+   }
+
+}
+
+ //get fibonacci sequence of "n"
+ var result = getFibonacciSequence(n);
+
+ cosole.log(result);//0, 1, 1, 2, 3, 5, 8, 13
+
+</script>
